@@ -1,0 +1,22 @@
+{% extends 'lessons/base.htm' %}
+
+{% block title %}
+<title>Register</title>
+{% endblock %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }} <br>
+    <label>Email: </label>
+    <input type="email" name="email"><br>
+    <label>Token: </label>
+    <input type="text" name="token"><br>
+    <input type="submit" value="Register">
+    {% if messages %}
+        {% for message in messages %}
+        <h2>{{ message }}</h2>
+        {% endfor %}
+    {% endif %}
+</form>
+{% endblock %}

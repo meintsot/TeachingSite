@@ -1,0 +1,20 @@
+{% extends 'lessons/base.htm' %}
+
+{% block title %}
+<title>Forgot password</title>
+{% endblock %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    <h3>Please enter the email address and your current username to send your new password:</h3>
+    <label>Email: </label>
+    <input type="email" name="email"><br>
+    <label>Username: </label>
+    <input type="text" name="username"><br>
+    <input type="submit" value="send"><br>
+    {% for message in messages %}
+    <h3>{{ message }}</h3>
+    {% endfor %}
+</form>
+{% endblock %}

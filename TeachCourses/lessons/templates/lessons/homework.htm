@@ -1,0 +1,20 @@
+{% extends 'lessons/base.htm' %}
+
+{% block title %}
+<title>Homework</title>
+{% endblock %}
+
+{% block main %}
+    {% if user.is_authenticated %}
+        {% if categories %}
+            {% for category in categories %}
+                <h1>{{ category.name }}</h1>
+                {% for homework in category.homework_set.all %}
+                <h3><a href="{{ category.file.url }}" download>{{ homework.name }}</a></h3>
+                {% endfor %}
+            {% endfor %}
+        {% endif %}
+    {% else %}
+    You need to login
+    {% endif %}
+{% endblock %}

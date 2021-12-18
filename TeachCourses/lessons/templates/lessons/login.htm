@@ -1,0 +1,21 @@
+{% extends 'lessons/base.htm' %}
+
+{% block title %}
+<title>Login</title>
+{% endblock %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    <h1>Login</h1>
+    <label>Username: </label>
+    <input type="text" name="username"><br>
+    <label>Password: </label>
+    <input type="password" name="password"><br>
+    <input type="submit" value="Login">
+    {% for message in messages %}
+    <h3>{{ message }}</h3>
+    {% endfor %}
+</form>
+<a href="{% url 'forgotpw' %}">Forgot your password? Click here</a>
+{% endblock %}

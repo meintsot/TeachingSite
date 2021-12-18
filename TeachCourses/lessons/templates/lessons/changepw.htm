@@ -1,0 +1,22 @@
+{% extends 'lessons/base.htm' %}
+
+{% block title %}
+<title>changepw</title>
+{% endblock %}
+
+{% block main %}
+<form method="post">
+    {% csrf_token %}
+    <h2>Change your password here</h2>
+    <label>Current password: </label>
+    <input type="password" name="curpass"><br>
+    <label>New password: </label>
+    <input type="password" name="password1"><br>
+    <label>New password(retype): </label>
+    <input type="password" name="password2"><br>
+    <input type="submit" value="Change Password">
+    {% for message in messages %}
+    <h3>{{ message }}</h3>
+    {% endfor %}
+</form>
+{% endblock %}

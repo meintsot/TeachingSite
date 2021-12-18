@@ -1,0 +1,18 @@
+{% extends 'lessons/base.htm' %}
+
+{% block title %}
+<title>Lessons</title>
+{% endblock %}
+
+{% block main %}
+    {% if user.is_authenticated %}
+        {% for category in categories %}
+            <h1>{{ category.name }}</h1>
+            {% for lesson in category.lesson_set.all %}
+            <h3><a href="{{ lesson.content.url }}" download>{{ lesson.name }}</a></h3>
+            {% endfor %}
+        {% endfor %}
+    {% else %}
+    You need to login to access the lessons
+    {% endif %}
+{% endblock %}

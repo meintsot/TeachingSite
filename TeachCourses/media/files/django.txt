@@ -1,0 +1,23 @@
+Django What should we learn
+...........................
+
+1) Understand django-admin
+2) Understand how django works as packages
+3) Understand manage.py
+4) Understand simple views (HttpResponse, render, get_object_or_404)
+5) Understand how urls work (path, include ad withoud path function)
+6) Understand a bit settings (check them always after learning a specific section)
+7) Understand how models work
+8) **Optional: Try django API
+9) A first look at the admin site
+10) Understand how templates work
+11) Understand how forms work and learn how to customize them and create own
+12) A look at generic views
+13) **Optional: Try some tests
+14) Focus on STATIC FILES (mostly CSS/BOOTSTRAP and JS)
+15) Customize admin form
+16) Write reusable apps
+17) https://docs.djangoproject.com/en/3.1/genindex/ for specific projects
+18) Pagination
+19) Signals
+20) Asynchronus stuff

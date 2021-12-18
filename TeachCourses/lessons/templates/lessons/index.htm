@@ -1,0 +1,19 @@
+{% extends 'lessons/base.htm' %}
+
+{% block title %}
+<title>Index</title>
+{% endblock %}
+
+{% block main %}
+    {% if not announcements %}
+    <h1>No announcements</h1>
+    {% else %}
+        {% for announcement in announcements %}
+            <div>
+                <h1>{{ announcement.title }}</h1>
+                <p>{{ announcement.content }}</p>
+                <div><i>{{ announcement.author.username }}</i></div>
+            </div>
+        {% endfor %}
+        {% endif %}
+{% endblock %}
